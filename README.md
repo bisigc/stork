@@ -1,2 +1,7 @@
 # stork
-Small todolist webapp.
+Small todolist webapp, written in python using flask, sqlite and sqlalchemy.
+
+## Dependencies
+- flask
+- sqlite
+- sqlalchemy

@@ -1,0 +1,3 @@
+graft stork/templates
+graft stork/static
+include stork/schema.sql
