@@ -7,7 +7,7 @@ class TaskController():
 		session = create_session()
 		taskList = session.query(Task).order_by(Task.id).all()
 		session.close()
-		return TaskList
+		return taskList
 
 	def getTasksByProjectId(self, projectId):
 		session = create_session()

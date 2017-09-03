@@ -2,6 +2,7 @@ import os
 from stork.controller import dbController
 from stork.controller.projectController import ProjectController
 from stork.controller.taskController import TaskController
+from stork.controller.userController import UserController
 from flask import Flask, request, session, redirect, url_for, abort, render_template, flash
 
 app = Flask(__name__)
@@ -31,6 +32,16 @@ def projectListView(id):
 	taskCtrl = TaskController()
 	taskList = taskCtrl.getTasksByProjectId(id)	
 	return render_template('projectTaskList.html', project=project, taskList=taskList)
+
+@app.route("/task/<id>")
+def taskDetailView(id):
+	taskCtrl = TaskController()
+	task = taskCtrl.getTaskById(id)	
+	userCtrl = UserController()
+	user = userCtrl.getUserById(task.creator_id)	
+	projectCtrl = ProjectController()
+	project = projectCtrl.getProjectById(task.project_id)	
+	return render_template('taskDetail.html', project=project, task=task, creator=user)
 
 @app.cli.command('initdb')
 def initdb_command():

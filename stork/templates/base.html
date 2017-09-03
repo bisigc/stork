@@ -9,13 +9,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<!-- Custom styles for this template -->
-    <link href="static/starter-template.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='starter-template.css') }}" rel="stylesheet">
 	<title>{% block title %}Stork{% endblock %} - Stork</title>
 	{% endblock %}
   </head>
   <body>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">STORK</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,21 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <!--li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <a class="nav-link" href="{{ url_for('index') }}">Projects<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -45,22 +31,13 @@
 
     <div class="container">
       <div class="starter-template">
-		{% block content  %}
-        <h1>Projects</h1>
-<div class="list-group">
-{% for project in projectList %}
-  <a href="#" class="list-group-item list-group-item-action">{{ project.title }}</a>
-{% endfor %}
-</div>
-		{% endblock %}
+		{% block content %}{% endblock %}
       </div>
     </div><!-- /.container -->
 
 	<div class="footer">
-		{% block footer %}
-		{% endblock %}
+		{% block footer %}{% endblock %}
 	</div><!-- footer -->
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

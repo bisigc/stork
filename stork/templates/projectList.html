@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Projectlist{% endblock %}
-{% block content  %}
+{% block content %}
 	<h1>Projects</h1>
 	<div class="list-group">
 	{% for project in projectList %}
-		<a href="/project/{{ project.id }}" class="list-group-item list-group-item-action">{{ project.title }}</a>
+		<a href="{{ url_for('projectListView', id=project.id) }}" class="list-group-item list-group-item-action">{{ project.title }}</a>
 	{% endfor %}
 	</div>
 {% endblock %}

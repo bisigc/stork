@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ task.title }} - Task{% endblock %}
+{% block content %}
+	<h1>{{ task.title }}</h1>
+	<div class="row">
+		<div class="col">
+			<div class="panel panel-default">
+				<div class="panel-heading">Creator</div>
+				<div class="panel-body">{{ creator.username }}</div>
+			</div>	
+		</div>
+		<div class="col">{{ task.duedate }}</div>
+		<div class="col">{{ task.finished }}</div>
+	</div>
+	<div class="row">
+		<div class="col">{{ task.description }}</div>
+	</div>
+{% endblock %}
