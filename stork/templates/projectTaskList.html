@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block content %}
+	<h1>Task of project {{ project.title }}</h1>
+	<div class="list-group">
+    {% for task in taskList %}
+        <a href="/task/{{ task.id }}" class="list-group-item list-group-item-action">{{ task.title }}</a>
+    {% endfor %}
+    </div>
+{% endblock %}

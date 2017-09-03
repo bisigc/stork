@@ -1,5 +1,5 @@
-from sqlalchemy import Sequence
-from ../controller/dbController import Base
+from sqlalchemy import Sequence, Column, Integer, String, Float
+from stork.base import Base
 
 class User(Base):
 	__tablename__ = 'user'
