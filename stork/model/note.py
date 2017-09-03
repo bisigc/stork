@@ -1,5 +1,5 @@
 from sqlalchemy import Sequence
-from ../controller/dbController import Base
+from controller import dbController.Base
 
 class Note(Base):
 	__tablename__ = 'note'

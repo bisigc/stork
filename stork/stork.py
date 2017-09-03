@@ -1,5 +1,5 @@
 import os
-import controller/dbController
+from stork.controller import dbController
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
 app = Flask(__name__)

@@ -1,6 +1,9 @@
-from ../stork import app
-from sqlalchemy import create_engine, declarative_base, sessionmaker
+from stork import stork
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
+app = stork.app
 Base = declerative_base()
 
 def create_engine():
